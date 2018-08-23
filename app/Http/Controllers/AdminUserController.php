@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Roles;
 use Illuminate\Http\Request;
 
 class AdminUserController extends Controller
@@ -13,7 +14,8 @@ class AdminUserController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        $roles = Roles::all();
+        return view('admin.index',compact('roles'));
     }
 
     /**
@@ -23,7 +25,8 @@ class AdminUserController extends Controller
      */
     public function create()
     {
-        //
+        $roles = Roles::pluck('role','id')->all();
+        return view('admin.adduser',compact('roles'));
     }
 
     /**

@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
     <link href='{{asset("plugins/bootstrap/css/bootstrap.css")}}' rel="stylesheet">
     {{--<link href="plugins/bootstrap/css/bootstrap.css" rel="stylesheet">--}}
 
@@ -25,12 +26,13 @@
 
 
     <!-- Morris Chart Css-->
-    <link href="{{asset('plugins/morrisjs/morris.css" rel="stylesheet')}}" rel="stylesheet" />
+    <link href="{{asset('plugins/morrisjs/morris.css')}}" rel="stylesheet" />
 
 
     <!-- Custom Css -->
 
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{asset("css/style.css")}}" rel="stylesheet" />
+    {{--<link href="css/style.css" rel="stylesheet">--}}
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{{asset('css/themes/all-themes.css')}}" rel="stylesheet" />
@@ -799,53 +801,79 @@
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            @yield('content')
+
             <h2>DASHBOARD</h2>
+
+
         </div>
+        @yield('content')
     </div>
 </section>
 
 <!-- Jquery Core Js -->
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src={{asset("plugins/jquery/jquery.min.js")}}></script>
+{{--<script src="plugins/jquery/jquery.min.js"></script>--}}
 
 <!-- Bootstrap Core Js -->
-<script src="plugins/bootstrap/js/bootstrap.js"></script>
+<script src={{asset("plugins/bootstrap/js/bootstrap.js")}}></script>
+{{--<script src="plugins/bootstrap/js/bootstrap.js"></script>--}}
 
 <!-- Select Plugin Js -->
-<script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
+<script src={{asset("plugins/bootstrap-select/js/bootstrap-select.js")}}></script>
+{{--<script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>--}}
+
+
 
 <!-- Slimscroll Plugin Js -->
-<script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+<script src={{asset("plugins/jquery-slimscroll/jquery.slimscroll.js")}}></script>
+{{--<script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>--}}
+
 
 <!-- Waves Effect Plugin Js -->
-<script src="plugins/node-waves/waves.js"></script>
+<script src={{asset("plugins/node-waves/waves.js")}}></script>
+{{--<script src="plugins/node-waves/waves.js"></script>--}}
 
 <!-- Jquery CountTo Plugin Js -->
-<script src="plugins/jquery-countto/jquery.countTo.js"></script>
+<script src={{asset("plugins/jquery-countto/jquery.countTo.js")}}></script>
+{{--<script src="plugins/jquery-countto/jquery.countTo.js"></script>--}}
 
 <!-- Morris Plugin Js -->
-<script src="plugins/raphael/raphael.min.js"></script>
-<script src="plugins/morrisjs/morris.js"></script>
+<script src={{asset("plugins/raphael/raphael.min.js")}}></script>
+{{--<script src="plugins/raphael/raphael.min.js"></script>--}}
+<script src={{asset("plugins/morrisjs/morris.js")}}></script>
+{{--<script src="plugins/morrisjs/morris.js"></script>--}}
 
 <!-- ChartJs -->
-<script src="plugins/chartjs/Chart.bundle.js"></script>
+{{--<script src="plugins/chartjs/Chart.bundle.js"></script>--}}
+<script src={{asset("plugins/chartjs/Chart.bundle.js")}}></script>
 
 <!-- Flot Charts Plugin Js -->
-<script src="plugins/flot-charts/jquery.flot.js"></script>
-<script src="plugins/flot-charts/jquery.flot.resize.js"></script>
-<script src="plugins/flot-charts/jquery.flot.pie.js"></script>
-<script src="plugins/flot-charts/jquery.flot.categories.js"></script>
-<script src="plugins/flot-charts/jquery.flot.time.js"></script>
+<script src={{asset("plugins/flot-charts/jquery.flot.js")}}></script>
+{{--<script src="plugins/flot-charts/jquery.flot.js"></script>--}}
+<script src={{asset("plugins/flot-charts/jquery.flot.resize.js")}}></script>
+{{--<script src="plugins/flot-charts/jquery.flot.resize.js"></script>--}}
+<script src={{asset("plugins/flot-charts/jquery.flot.pie.js")}}></script>
+{{--<script src="plugins/flot-charts/jquery.flot.pie.js"></script>--}}
+<script src={{asset("plugins/flot-charts/jquery.flot.categories.js")}}></script>
+{{--<script src="plugins/flot-charts/jquery.flot.categories.js"></script>--}}
+
+<script src={{asset("plugins/flot-charts/jquery.flot.time.js")}}></script>
+{{--<script src="plugins/flot-charts/jquery.flot.time.js"></script>--}}
+
 
 <!-- Sparkline Chart Plugin Js -->
-<script src="plugins/jquery-sparkline/jquery.sparkline.js"></script>
+<script src={{asset("plugins/jquery-sparkline/jquery.sparkline.js")}}></script>
+{{--<script src="plugins/jquery-sparkline/jquery.sparkline.js"></script>--}}
 
 <!-- Custom Js -->
-<script src="js/admin.js"></script>
-<script src="js/pages/index.js"></script>
-
+{{--<script src="js/admin.js"></script>--}}
+<script src={{asset("js/admin.js")}}></script>
+{{--<script src="js/pages/index.js"></script>--}}
+<script src={{asset("js/pages/index.js")}}></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 <!-- Demo Js -->
-<script src="js/demo.js"></script>
+<script src={{asset("js/demo.js")}}></script>
+{{--<script src="js/demo.js"></script>--}}
 </body>
 
 </html>
