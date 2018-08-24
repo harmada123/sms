@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Welcome To | Bootstrap Based Admin Template - Material Design</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Favicon-->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -76,7 +76,7 @@
         <div class="navbar-header">
             <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
             <a href="javascript:void(0);" class="bars"></a>
-            <a class="navbar-brand" href="index.html">{{ config('app.name', 'Laravel') }}</a>
+            <a class="navbar-brand" href={{url('/admin')}}>{{ config('app.name', 'Laravel') }}</a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav navbar-right" >
@@ -801,10 +801,7 @@
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-
             <h2>DASHBOARD</h2>
-
-
         </div>
         @yield('content')
     </div>
