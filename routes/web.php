@@ -19,11 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware'=>'admin'],function (){
-    Route::resource('/admin','AdminUserController');
-    Route::resource('/subject','ManageSubjectController');
-    Route::resource('/course','ManageCourseController');
+Route::group(['middleware'=>'admin'],function () {
+    Route::resource('/admin', 'AdminUserController');
+    Route::resource('/subject', 'ManageSubjectController');
+    Route::resource('/course', 'ManageCourseController');
+    Route::get('/users', 'AdminUserController@showUsers');
 });
-
-
-

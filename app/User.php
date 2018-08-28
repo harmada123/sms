@@ -20,6 +20,7 @@ class User extends Authenticatable
         'lastname',
         'email',
         'role_id',
+        'photo_id',
         'password',
     ];
 
@@ -42,6 +43,9 @@ class User extends Authenticatable
     }
     public function course(){
         return $this->belongsTo('App\Courses');
+    }
+    public function photo(){
+        return $this->belongsTo('App\Photo');
     }
 
     public function isAdmin(){
