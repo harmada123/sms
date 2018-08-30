@@ -282,7 +282,7 @@
         <!-- User Info -->
         <div class="user-info">
             <div class="image">
-                <img src="images/user.png" width="48" height="48" alt="User" />
+                <img src={{url('images',Auth::user()->photo ? Auth::user()->photo->file : 'No Photo' )}} width="48" height="48" alt="User" />
             </div>
             <div class="info-container">
                 <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}</div>
@@ -327,15 +327,15 @@
                     </a>
                 </li>
                 <li>
-                    <a href="pages/helper-classes.html">
+                    <a href="{{url('/students')}}">
                         <i class="material-icons">layers</i>
-                        <span>Helper Classes</span>
+                        <span>Students</span>
                     </a>
                 </li>
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">widgets</i>
-                        <span>Widgets</span>
+                        <span>Course</span>
                     </a>
                     <ul class="ml-menu">
                         <li>

@@ -6,6 +6,7 @@ use App\Roles;
 use Illuminate\Http\Request;
 use App\User;
 use App\Photo;
+use PHPUnit\Util\RegularExpressionTest;
 
 class AdminUserController extends Controller
 {
@@ -54,6 +55,7 @@ class AdminUserController extends Controller
             $input['photo_id'] = $photo->id;
         }
         User::create($input);
+        return redirect('/admin');
     }
 
     /**
@@ -75,7 +77,9 @@ class AdminUserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $users = User::findOrFail($id);
+        $roles = Roles::pluck('role','id')->all();
+        return view('admin.edituser')->with(compact('users','roles'));
     }
 
     /**
@@ -87,7 +91,24 @@ class AdminUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+        if(trim($request->password)==''){
+            $input = $request->except('password');
+        }
+        else{
+            $input = $request->all();
+            $input['password'] = bcrypt($request->password);
+        }
+
+        if($file = $request->file('photo_id')){
+            $name = time().$file->getClientOriginalName();
+            $file->move('images',$name);
+            $photo = Photo::create(['file'=>$name]);
+            $input['photo_id'] = $photo->id;
+        }
+        $user->update($input);
+        return redirect('admin/');
+
     }
 
     /**

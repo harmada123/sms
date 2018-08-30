@@ -27,7 +27,7 @@
                                     <td>{{$user->middlename}}</td>
                                     <td>{{$user->lastname}}</td>
                                     <td>
-                                        <a href={{route('admin.')}}>
+                                        <a href={{route('admin.edit',$user->id)}}>
                                             {{$user->email}}
                                         </a>
                                     </td>
