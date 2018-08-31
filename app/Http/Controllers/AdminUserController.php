@@ -6,6 +6,7 @@ use App\Roles;
 use Illuminate\Http\Request;
 use App\User;
 use App\Photo;
+use Yajra\DataTables\DataTables;
 use PHPUnit\Util\RegularExpressionTest;
 
 class AdminUserController extends Controller
@@ -121,9 +122,22 @@ class AdminUserController extends Controller
     {
         //
     }
+    public function get_datatable(){
+        return DataTables::of(User::query())->make(true);
+    }
+    public function get_data(){
+        return DataTables::of(User::query()->where('role_id',null))->make(true);
+    }
 
     public function showUsers(){
-        $users = User::all();
-        return view('admin.user')->with(compact('users'));
+//        $users = User::all();
+        return view('admin.user');
+    }
+
+
+
+
+    public function getInactive(){
+        return view('admin.student.index');
     }
 }

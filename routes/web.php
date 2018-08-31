@@ -23,5 +23,7 @@ Route::group(['middleware'=>'admin'],function () {
     Route::resource('/admin', 'AdminUserController');
     Route::resource('/subject', 'ManageSubjectController');
     Route::resource('/course', 'ManageCourseController');
+    Route::resource('/student','ManageStudentController');
     Route::get('/users', 'AdminUserController@showUsers');
+    Route::get('/users/get_datatable','AdminUserController@get_datatable');
 });
